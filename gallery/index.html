@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://project-onisshesh.github.io/ogimg.jpg" />
 
 
-    <title>Donations - Project Onisshesh</title>
+    <title>Gallery - Project Onisshesh</title>
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -26,7 +26,7 @@
 
     <link href="../assets/css/plugins.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
 <body class="v-dark dsn-effect-scroll dsn-cursor-effect dsn-ajax">
@@ -50,10 +50,10 @@
                     <a href="#" data-dsn="parallax">
                         <img class="light-logo user-no-selection"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/img/logo.png" alt="" />
+                            data-dsn-src="../assets/img/logo.png" alt="" />
                         <img class="dark-logo user-no-selection"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="assets/img/logo.png" alt="" />
+                            data-dsn-src="../assets/img/logo.png" alt="" />
                     </a>
                 </div>
             </div>
@@ -91,8 +91,8 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="../gallery/" class="user-no-selection">
+                    <li class="dsn-active">
+                        <a href="#" class="user-no-selection">
 
                             <span class="dsn-title-menu">Gallery</span>
                             <span class="dsn-meta-menu">03</span>
@@ -109,8 +109,8 @@
                         </a>
                     </li>
 
-                    <li class="dsn-active">
-                        <a href="#" class="user-no-selection">
+                    <li>
+                        <a href="../donations/" class="user-no-selection">
 
                             <span class="dsn-title-menu">Donations</span>
                             <span class="dsn-meta-menu">05</span>
@@ -143,52 +143,31 @@
                     <div class="dsn-container">
                         <div class="content-hero p-relative d-flex align-items-center text-center flex-column h-100 dsn-hero-parallax-title">
                             <p class="subtitle p-relative line-shap  ">
-                                <span class="pl-10 pr-10 bgclwh dsn-load-animate">Donate</span>
+                                <span class="pl-10 pr-10 bgclwh dsn-load-animate">Gallery</span>
                             </p>
-                            <h1 class="title mt-20 dsn-load-animate">Donations</h1>
-                            <br>
+                            <h1 class="title mt-20 dsn-load-animate">Gallery</h1>
                         </div>
                     </div>
                 </header>
 
                 <div class="wrapper">
 
-                    <div class="container root-contact">
-                        <div class="box-contact-inner section-margin">
+                    <section class="gallery-section full-width section-padding v-light" data-dsn-title="Gallery" id="gallery">
+                        <div class="container">
                             <div class="row">
-                                <div class="dons" style="font-size: 18px; font-weight: 800">
-                                    <div>Donator</div>
-                                    <div>Amount</div>
-                                    <div>Invoice no.</div>
-                                    <div>Contact no.</div>
+                                <div class="popup-gallery">
+                                    <center>
+                                    <a href="../assets/img/gallery/01.jpg"><img src="../assets/img/gallery/01.jpg" alt=""></a>
+                                    <a href="../assets/img/gallery/02.jpg"><img src="../assets/img/gallery/02.jpg" alt=""></a>
+                                    <a href="../assets/img/gallery/03.jpg"><img src="../assets/img/gallery/03.jpg" alt=""></a>
+                                    <a href="../assets/img/gallery/04.jpg"><img src="../assets/img/gallery/04.jpg" alt=""></a>
+                                    <a href="../assets/img/gallery/05.jpg"><img src="../assets/img/gallery/05.jpg" alt=""></a>
+                                    </center>
                                 </div>
-
-                                <div class="dons">
-                                    <div class="donss">Unknown</div>
-                                    <div>500</div>
-                                    <div>220001</div>
-                                    <div>********383</div>
-                                </div>
-
-                                <div class="dons">
-                                    <div class="donss">Unknown</div>
-                                    <div>100</div>
-                                    <div>220002</div>
-                                    <div>********823</div>
-                                </div>
-
-                                <div class="dons">
-                                    <div class="donss">Unknown</div>
-                                    <div>370</div>
-                                    <div>220003</div>
-                                    <div>********188</div>
-                                </div>
-
-                                <br><br>
 
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <section class="next-page p-relative section-padding border-top background-section">
                         <div class="bg-circle-dotted"></div>
@@ -205,6 +184,8 @@
                                         DONATE TO OUR CAUSE
 
                                     </h2>
+
+
                                 </div>
 
                                 <div class="button-box d-flex justify-content-end align-items-center">
@@ -277,6 +258,24 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.popup-gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-img-mobile',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1]
+                },
+                image: {
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                }
+            });
+        });
+    </script>
     <script src="../assets/js/plugins.min.js"></script>
     <script src="../assets/js/dsn-grid.min.js"></script>
     <script src="../assets/js/custom.js"></script>
